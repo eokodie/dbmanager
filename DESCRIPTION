@@ -1,0 +1,21 @@
+Package: dbmanager
+Title: A connection manager for databases and compute engines.
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Ernest", 
+           family = "Omane-Kodie", 
+           email = "eokodie@gmail.com", 
+           role = c("aut", "cre"))
+Description: Provides a consistent interface for managing 
+       connections to database and compute engines in R.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports: 
+    R6,
+    DBI,
+    pool,
+    glue,
+    RMySQL,
+    rlang

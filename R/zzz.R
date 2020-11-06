@@ -1,0 +1,5 @@
+#' @importFrom magrittr %>%
+#'
+#'
+
+"_PACKAGE"
