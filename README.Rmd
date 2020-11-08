@@ -36,6 +36,27 @@ knitr::opts_chunk$set(
 
 This package is currently under development. The API is likely to change and some features are incomplete.
 
+## Features
+
+The goal of dbmanager is to provide connection management to the following databases and compute engines.
+
+```{r, echo=FALSE, eval=TRUE}
+yes <- ":heavy_check_mark:"
+no <- ":heavy_multiplication_x:"
+
+features <- tibble::tribble(
+  ~Engine, ~Implemented,
+  "MySQL",        no,
+  "PostgreSQL",   no,
+  "SQL Server",   no,
+  "MonetDB",      no,
+  "SQLite",       no,
+  "CouchDB",      no,
+  "Spark",        no
+)
+knitr::kable(features, align = "c")
+```
+
 ## Installation
 
 **dbmanager** is not yet on CRAN. You can install from GitHub with:

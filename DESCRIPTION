@@ -18,4 +18,5 @@ Imports:
     pool,
     glue,
     RMySQL,
+    RPostgres,
     rlang

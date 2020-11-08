@@ -29,6 +29,21 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 This package is currently under development. The API is likely to change
 and some features are incomplete.
 
+## Features
+
+The goal of dbmanager is to provide connection management to the
+following databases and compute engines.
+
+|   Engine   |        Implemented         |
+| :--------: | :------------------------: |
+|   MySQL    | :heavy\_multiplication\_x: |
+| PostgreSQL | :heavy\_multiplication\_x: |
+| SQL Server | :heavy\_multiplication\_x: |
+|  MonetDB   | :heavy\_multiplication\_x: |
+|   SQLite   | :heavy\_multiplication\_x: |
+|  CouchDB   | :heavy\_multiplication\_x: |
+|   Spark    | :heavy\_multiplication\_x: |
+
 ## Installation
 
 **dbmanager** is not yet on CRAN. You can install from GitHub with:
