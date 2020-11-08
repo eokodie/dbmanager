@@ -50,7 +50,7 @@ following databases and compute engines.
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("eokodie/dbmanager")
+remotes::install_github("eokodie/dbmanager", ref = "main")
 ```
 
 ## Examples

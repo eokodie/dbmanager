@@ -62,7 +62,7 @@ knitr::kable(features, align = "c")
 **dbmanager** is not yet on CRAN. You can install from GitHub with:
 ```{r, eval=FALSE}
 # install.packages("remotes")
-remotes::install_github("eokodie/dbmanager")
+remotes::install_github("eokodie/dbmanager", ref = "main")
 ```
 
 ## Examples
