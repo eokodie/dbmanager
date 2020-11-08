@@ -1,4 +1,4 @@
-#' MySQLManagerR6
+#' DatabaseManager
 #' 
 #' @return A DatabaseManager template.
 #' 
