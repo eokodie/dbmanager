@@ -53,7 +53,12 @@ following databases and compute engines.
 remotes::install_github("eokodie/dbmanager")
 ```
 
-# Examples
+## Examples
+
+`dbmanager` is implemented with R6 classes to give a consistent
+interface to common databases and compute engines.
+
+Below is a simple MySQL example:
 
 ``` r
 library(dbmanager)
@@ -68,7 +73,6 @@ mysql <- MySQL$new(
 mysql$available_databases
 mysql$connected_database
 mysql$tables
-
 # You can also get the pool object to run queries etc.
 pool <- mysql$pool
 
