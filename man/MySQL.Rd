@@ -21,7 +21,7 @@ MySQL
 A new `Pool` object.
 }
 \description{
-This class is a class for managing MySQL connections.
+This is a class for managing MySQL connections.
 
 open a MySQL connection
 }

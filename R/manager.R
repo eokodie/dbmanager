@@ -1,9 +1,7 @@
 #' DatabaseManager
 #' 
-#' @return A DatabaseManager template.
-#' 
 #' @description 
-#' This class is a superclass for managing database connections.
+#' This is a superclass for managing database connections.
 #' 
 #' @section Methods:
 #' \describe{
@@ -12,7 +10,7 @@
 #'   \item{\code{show_databases}}{show available databases}
 #'   \item{\code{create_new_db}}{create a new database}
 #' }
-#'
+#' @return A DatabaseManager template.
 DatabaseManager <- R6::R6Class(
   classname = "DatabaseManager",
   cloneable = FALSE,
@@ -24,7 +22,7 @@ DatabaseManager <- R6::R6Class(
     available_databases = NULL,
     tables = NULL,
     
-    #' @description Create a new `DatabaseManager` object.
+    #' Create a new `DatabaseManager` object.
     #' @param db_name Database name.
     #' @param host Host name.
     #' @param user User name.

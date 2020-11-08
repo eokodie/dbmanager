@@ -1,7 +1,7 @@
 #' MySQL
 #' 
 #' @description 
-#' This class is a class for managing MySQL connections.
+#' This is a class for managing MySQL connections.
 #' 
 #' @inheritParams DatabaseManager
 #' 
@@ -21,8 +21,7 @@ MySQL <- R6::R6Class(
   inherit = DatabaseManager,
   
   public = list(
-    #' @description
-    #' open a MySQL connection
+    #' @description open a MySQL connection
     #' @param db_name Database name.
     #' @param host Host name.
     #' @param user User name.

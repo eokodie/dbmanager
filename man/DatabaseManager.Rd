@@ -19,14 +19,13 @@ DatabaseManager
 }
 \value{
 A DatabaseManager template.
+Create a new `DatabaseManager` object.
 
 A new `DatabaseManager` object.
 open a database connection
 }
 \description{
-This class is a superclass for managing database connections.
-
-Create a new `DatabaseManager` object.
+This is a superclass for managing database connections.
 }
 \section{Methods}{
 
