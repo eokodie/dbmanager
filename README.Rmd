@@ -34,7 +34,7 @@ knitr::opts_chunk$set(
 
 > A consistent interface for managing connections to database and compute engines.
 
-This package is currently under development. The API is likely to change and some features are incomplete.
+This package is currently under active development. The API is likely to change and some features are incomplete.
 
 ## Features
 
@@ -46,7 +46,7 @@ no <- ":heavy_multiplication_x:"
 
 features <- tibble::tribble(
   ~Engine, ~Implemented,
-  "MySQL",        no,
+  "MySQL",        yes,
   "PostgreSQL",   no,
   "SQL Server",   no,
   "MonetDB",      no,
@@ -62,9 +62,32 @@ knitr::kable(features, align = "c")
 **dbmanager** is not yet on CRAN. You can install from GitHub with:
 ```{r, eval=FALSE}
 # install.packages("remotes")
-remotes::install_github("eokodie/dbmanager")
+remotes::install_github("eokodie/dbmanager", ref = "main")
 ```
 
+## Examples
+
+`dbmanager` is implemented with R6 classes to give a consistent interface to common databases and compute engines.
+
+Below is a simple MySQL example:
+```{r, eval=FALSE}
+library(dbmanager)
+
+mysql <- MySQL$new(
+  db_name  = "mydb",
+  host     = "root", 
+  user     = "foobar", 
+  password = "pwd1"
+)
+
+mysql$available_databases
+mysql$connected_database
+mysql$tables
+# You can also get the pool object to run queries etc.
+pool <- mysql$pool
+
+mysql$close()
+```
 
 
 

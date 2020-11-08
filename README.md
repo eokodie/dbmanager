@@ -26,8 +26,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 > A consistent interface for managing connections to database and
 > compute engines.
 
-This package is currently under development. The API is likely to change
-and some features are incomplete.
+This package is currently under active development. The API is likely to
+change and some features are incomplete.
 
 ## Features
 
@@ -36,7 +36,7 @@ following databases and compute engines.
 
 |   Engine   |        Implemented         |
 | :--------: | :------------------------: |
-|   MySQL    | :heavy\_multiplication\_x: |
+|   MySQL    |    :heavy\_check\_mark:    |
 | PostgreSQL | :heavy\_multiplication\_x: |
 | SQL Server | :heavy\_multiplication\_x: |
 |  MonetDB   | :heavy\_multiplication\_x: |
@@ -50,5 +50,31 @@ following databases and compute engines.
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("eokodie/dbmanager")
+remotes::install_github("eokodie/dbmanager", ref = "main")
+```
+
+## Examples
+
+`dbmanager` is implemented with R6 classes to give a consistent
+interface to common databases and compute engines.
+
+Below is a simple MySQL example:
+
+``` r
+library(dbmanager)
+
+mysql <- MySQL$new(
+  db_name  = "mydb",
+  host     = "root", 
+  user     = "foobar", 
+  password = "pwd1"
+)
+
+mysql$available_databases
+mysql$connected_database
+mysql$tables
+# You can also get the pool object to run queries etc.
+pool <- mysql$pool
+
+mysql$close()
 ```
