@@ -31,22 +31,23 @@ change and some features are incomplete.
 
 ## Features
 
-The goal of dbmanager is to provide connection management to the
+The goal of `dbmanager` is to provide connection management to the
 following databases and compute engines.
 
-|   Engine   |        Implemented         |
-| :--------: | :------------------------: |
-|   MySQL    |    :heavy\_check\_mark:    |
-| PostgreSQL | :heavy\_multiplication\_x: |
+| Engine     |        Implemented         |
+| :--------- | :------------------------: |
+| MySQL      |    :heavy\_check\_mark:    |
+| PostgreSQL |    :heavy\_check\_mark:    |
 | SQL Server | :heavy\_multiplication\_x: |
-|  MonetDB   | :heavy\_multiplication\_x: |
-|   SQLite   | :heavy\_multiplication\_x: |
-|  CouchDB   | :heavy\_multiplication\_x: |
-|   Spark    | :heavy\_multiplication\_x: |
+| MonetDB    | :heavy\_multiplication\_x: |
+| SQLite     | :heavy\_multiplication\_x: |
+| CouchDB    | :heavy\_multiplication\_x: |
+| MongoDB    | :heavy\_multiplication\_x: |
+| Spark      | :heavy\_multiplication\_x: |
 
 ## Installation
 
-**dbmanager** is not yet on CRAN. You can install from GitHub with:
+`dbmanager` is not yet on CRAN. You can install from GitHub with:
 
 ``` r
 # install.packages("remotes")
@@ -58,23 +59,43 @@ remotes::install_github("eokodie/dbmanager", ref = "main")
 `dbmanager` is implemented with R6 classes to give a consistent
 interface to common databases and compute engines.
 
-Below is a simple MySQL example:
+You can connect to a MySQL database with.
 
 ``` r
 library(dbmanager)
 
-mysql <- MySQL$new(
+db <- MySQL$new(
   db_name  = "mydb",
-  host     = "root", 
-  user     = "foobar", 
+  host     = "test1", 
+  user     = "user1", 
   password = "pwd1"
 )
 
-mysql$available_databases
-mysql$connected_database
-mysql$tables
+db$available_databases
+db$connected_database
+db$tables
 # You can also get the pool object to run queries etc.
-pool <- mysql$pool
+pool <- db$pool
 
-mysql$close()
+db$close()
+```
+
+Similarly, you can connect to PostgreSQL with.
+
+``` r
+library(dbmanager)
+
+db <- PostgreSQL$new(
+  db_name  = "mydb2",
+  host     = "test2", 
+  user     = "user2", 
+  password = "pwd2"
+)
+
+db$available_databases
+db$connected_database
+db$tables
+pool <- db$pool
+
+db$close()
 ```
