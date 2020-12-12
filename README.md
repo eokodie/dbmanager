@@ -57,9 +57,10 @@ remotes::install_github("eokodie/dbmanager", ref = "main")
 ## Examples
 
 `dbmanager` is implemented with R6 classes to give a consistent
-interface to common databases and compute engines.
+interface to common databases and compute engines. We will illustrate
+this with some code snippets.
 
-Let’s fetch some credentials.
+Let’s begin with these credentials.
 
 ``` r
 db_name  = Sys.getenv("db_name")
@@ -68,7 +69,7 @@ user     = Sys.getenv("user")
 password = Sys.getenv("password")
 ```
 
-You can connect to a MySQL database with.
+We can connect to a MySQL database with.
 
 ``` r
 library(dbmanager)
@@ -119,16 +120,16 @@ DBI::dbListTables(pool)
 db$close()
 ```
 
-Similarly, you can connect to PostgreSQL with.
+Similarly, we can connect to PostgreSQL with.
 
 ``` r
 library(dbmanager)
 
 db <- PostgreSQL$new(
-  db_name  = Sys.getenv("db_name"),
-  host     = Sys.getenv("host"), 
-  user     = Sys.getenv("user"), 
-  password = Sys.getenv("password")
+  db_name  = db_name,
+  host     = host, 
+  user     = user, 
+  password = password
 )
 
 db$available_databases
