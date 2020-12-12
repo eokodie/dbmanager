@@ -1,4 +1,4 @@
-#' DatabaseManager
+#' Manage Databases
 #' 
 #' @description 
 #' This is a superclass for managing database connections.

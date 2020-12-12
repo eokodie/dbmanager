@@ -3,7 +3,7 @@
 \docType{data}
 \name{DatabaseManager}
 \alias{DatabaseManager}
-\title{DatabaseManager}
+\title{Manage Databases}
 \format{An object of class \code{R6ClassGenerator} of length 25.}
 \usage{
 DatabaseManager

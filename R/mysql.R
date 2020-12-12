@@ -1,4 +1,4 @@
-#' MySQL
+#' Manage MySQL connections
 #' 
 #' @description 
 #' This is a class for managing MySQL connections.
