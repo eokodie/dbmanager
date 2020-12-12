@@ -1,4 +1,4 @@
-#' MySQL
+#' Manage PostgreSQL connections
 #' 
 #' @description 
 #' This is a class for managing PostgreSQL connections.

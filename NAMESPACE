@@ -2,5 +2,6 @@
 
 export(MySQL)
 export(PostgreSQL)
+export(SQLServer)
 importFrom(magrittr,"%>%")
 importFrom(rlang,abort)

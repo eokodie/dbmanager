@@ -38,7 +38,7 @@ following databases and compute engines.
 | :--------- | :------------------------: |
 | MySQL      |    :heavy\_check\_mark:    |
 | PostgreSQL |    :heavy\_check\_mark:    |
-| SQL Server | :heavy\_multiplication\_x: |
+| SQL Server |    :heavy\_check\_mark:    |
 | MonetDB    | :heavy\_multiplication\_x: |
 | SQLite     | :heavy\_multiplication\_x: |
 | CouchDB    | :heavy\_multiplication\_x: |
@@ -59,23 +59,62 @@ remotes::install_github("eokodie/dbmanager", ref = "main")
 `dbmanager` is implemented with R6 classes to give a consistent
 interface to common databases and compute engines.
 
+Let’s fetch some credentials.
+
+``` r
+db_name  = Sys.getenv("db_name")
+host     = Sys.getenv("host") 
+user     = Sys.getenv("user") 
+password = Sys.getenv("password")
+```
+
 You can connect to a MySQL database with.
 
 ``` r
 library(dbmanager)
 
 db <- MySQL$new(
-  db_name  = "mydb",
-  host     = "test1", 
-  user     = "user1", 
-  password = "pwd1"
+  db_name  = db_name,
+  host     = host, 
+  user     = user, 
+  password = password
 )
 
 db$available_databases
+#> [1] "test_db"                   "information_schema"       
+#> [3] "mysql"                     "performance_schema"       
+#> [5] "previous_close_prices_tbl" "sys"                      
+#> [7] "example_db"
+
 db$connected_database
+#> [1] "information_schema"
+
 db$tables
+#>  [1] "ADMINISTRABLE_ROLE_AUTHORIZATIONS"    
+#>  [2] "APPLICABLE_ROLES"                     
+#>  [3] "CHARACTER_SETS"                       
+#>  [4] "CHECK_CONSTRAINTS"                    
+#>  [5] "COLLATIONS"                           
+#>  [6] "COLLATION_CHARACTER_SET_APPLICABILITY"
+#>  [7] "COLUMNS"                              
+#>  [8] "COLUMNS_EXTENSIONS"                   
+#>  [9] "COLUMN_PRIVILEGES"                    
+#> [10] "COLUMN_STATISTICS"                    
+#> [11] "ENABLED_ROLES"                        
+#> [12] "ENGINES"                              
+#> [13] "EVENTS"                               
+#> [14] "FILES"                                
+
 # You can also get the pool object to run queries etc.
 pool <- db$pool
+
+DBI::dbListTables(pool)
+#>  [1] "ADMINISTRABLE_ROLE_AUTHORIZATIONS"    
+#>  [2] "APPLICABLE_ROLES"                     
+#>  [3] "CHARACTER_SETS"                       
+#>  [4] "CHECK_CONSTRAINTS"                    
+#>  [5] "COLLATIONS"                           
+#>  [6] "COLLATION_CHARACTER_SET_APPLICABILITY"
 
 db$close()
 ```
@@ -86,10 +125,10 @@ Similarly, you can connect to PostgreSQL with.
 library(dbmanager)
 
 db <- PostgreSQL$new(
-  db_name  = "mydb2",
-  host     = "test2", 
-  user     = "user2", 
-  password = "pwd2"
+  db_name  = Sys.getenv("db_name"),
+  host     = Sys.getenv("host"), 
+  user     = Sys.getenv("user"), 
+  password = Sys.getenv("password")
 )
 
 db$available_databases

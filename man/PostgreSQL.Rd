@@ -3,7 +3,7 @@
 \docType{data}
 \name{PostgreSQL}
 \alias{PostgreSQL}
-\title{MySQL}
+\title{Manage PostgreSQL connections}
 \format{An object of class \code{R6ClassGenerator} of length 25.}
 \usage{
 PostgreSQL

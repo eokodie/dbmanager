@@ -19,4 +19,5 @@ Imports:
     glue,
     RMySQL,
     RPostgres,
+    odbc,
     rlang

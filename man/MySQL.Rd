@@ -3,7 +3,7 @@
 \docType{data}
 \name{MySQL}
 \alias{MySQL}
-\title{MySQL}
+\title{Manage MySQL connections}
 \format{An object of class \code{R6ClassGenerator} of length 25.}
 \usage{
 MySQL
