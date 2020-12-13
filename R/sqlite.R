@@ -37,8 +37,8 @@ SQLite <- R6::R6Class(
     open = function(host = ":memory:") {
       tryCatch({
         pool::dbPool(
-          drv   = MonetDBLite::MonetDBLite(),
-          host= host
+          drv  = RSQLite::SQLite(),
+          host = host
         )},
         error = function(e) abort("Failed to establish a database connection.")
       )
