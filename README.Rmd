@@ -153,7 +153,7 @@ db$close()
 
 If you encounter a clear bug, please file an issue with a minimal reproducible example on [GitHub](https://github.com/eokodie/dbmanager/issues). 
 
-Contributions to the package are welcome. Please start by filing an [issue](https://github.com/eokodie/an/issues), outlining the bug you intend to fix or functionality you intend to add or modify.
+Contributions to the package are welcome. Please start by filing an [issue](https://github.com/eokodie/dbmanager/issues), outlining the bug you intend to fix or functionality you intend to add or modify.
 
 ## Code of Conduct
 

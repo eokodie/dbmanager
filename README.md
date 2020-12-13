@@ -147,8 +147,8 @@ reproducible example on
 [GitHub](https://github.com/eokodie/dbmanager/issues).
 
 Contributions to the package are welcome. Please start by filing an
-[issue](https://github.com/eokodie/an/issues), outlining the bug you
-intend to fix or functionality you intend to add or modify.
+[issue](https://github.com/eokodie/dbmanager/issues), outlining the bug
+you intend to fix or functionality you intend to add or modify.
 
 ## Code of Conduct
 
