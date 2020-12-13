@@ -40,7 +40,7 @@ following databases and compute engines.
 | PostgreSQL |    :heavy\_check\_mark:    |
 | SQL Server |    :heavy\_check\_mark:    |
 | MonetDB    |    :heavy\_check\_mark:    |
-| SQLite     | :heavy\_multiplication\_x: |
+| SQLite     |    :heavy\_check\_mark:    |
 | CouchDB    | :heavy\_multiplication\_x: |
 | MongoDB    | :heavy\_multiplication\_x: |
 | Spark      | :heavy\_multiplication\_x: |

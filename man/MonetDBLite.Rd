@@ -21,6 +21,7 @@ open a MonetDBLite connection
 library(dbmanager)
 monetdb <- MonetDBLite$new(tempdir())
 monetdb$connected_database
+db$create_table(name = "mtcars", value = mtcars)
 monetdb$tables
 monetdb$close()
 } 

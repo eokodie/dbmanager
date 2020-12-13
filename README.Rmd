@@ -50,7 +50,7 @@ features <- tibble::tribble(
   "PostgreSQL",   yes,
   "SQL Server",   yes,
   "MonetDB",      yes,
-  "SQLite",       no,
+  "SQLite",       yes,
   "CouchDB",      no,
   "MongoDB",      no,
   "Spark",        no
