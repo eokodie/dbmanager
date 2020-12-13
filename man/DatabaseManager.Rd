@@ -40,6 +40,7 @@ Create a table
   \item{\code{close}}{close database connection}
   \item{\code{show_databases}}{show available databases}
   \item{\code{create_new_db}}{create a new database}
+  \item{\code{create_table}}{create a table}
 }
 }
 

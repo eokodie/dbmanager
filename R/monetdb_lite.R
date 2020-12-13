@@ -9,7 +9,6 @@
 #' \dontrun{
 #' library(dbmanager)
 #' monetdb <- MonetDBLite$new(tempdir())
-#' monetdb$available_databases
 #' monetdb$connected_database
 #' monetdb$tables
 #' monetdb$close()
