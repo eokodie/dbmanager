@@ -20,4 +20,5 @@ Imports:
     RMySQL,
     RPostgres,
     odbc,
+    MonetDBLite,
     rlang

@@ -19,7 +19,7 @@
 #' @export
 SQLServer <- R6::R6Class(
   classname = "SQLServer", 
-  inherit = DatabaseManagerR6,
+  inherit = DatabaseManager,
   
   public = list(
     #' @description

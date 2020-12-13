@@ -56,6 +56,14 @@ DatabaseManager <- R6::R6Class(
       # DBI::dbGetQuery(pool, "set global local_infile=true;")
     },
     
+    #' @description Create a table
+    #' @param name A character string specifying the unquoted DBMS table name.
+    #' @param value a data.frame (or coercible to data.frame).
+    create_table = function(name, value){
+      DBI::dbWriteTable(self$pool, name, value)
+      self$tables <- DBI::dbListTables(self$pool)
+    }, 
+    
     finalize = function() {
       self$close()
     }

@@ -19,7 +19,7 @@
 #' @export
 PostgreSQL <- R6::R6Class(
   classname = "PostgreSQL", 
-  inherit = DatabaseManagerR6,
+  inherit = DatabaseManager,
   
   public = list(
     
