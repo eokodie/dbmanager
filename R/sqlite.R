@@ -1,24 +1,23 @@
-#' Manage MonetDBLite connections
+#' Manage SQLite connections
 #' 
 #' @description 
-#' This is a class for managing MonetDBLite connections.
+#' This is a class for managing SQLite connections.
 #' 
 #' @inheritParams DatabaseManager
 #' 
 #' @examples 
 #' \dontrun{
 #' library(dbmanager)
-#' monetdb <- MonetDBLite$new(tempdir())
-#' monetdb$connected_database
-#' db$create_table(name = "mtcars", value = mtcars)
-#' monetdb$tables
-#' monetdb$close()
+#' db <- SQLite$new(host = ":memory:")
+#' db$connected_database
+#' db$tables
+#' db$close()
 #' } 
 #' 
 #' @importFrom rlang abort
 #' @export
-MonetDBLite <- R6::R6Class(
-  classname = "MonetDBLite", 
+SQLite <- R6::R6Class(
+  classname = "SQLite", 
   inherit = DatabaseManager,
   
   public = list(
@@ -26,20 +25,20 @@ MonetDBLite <- R6::R6Class(
     connected_database = NULL,
     tables = NULL,
     
-    initialize = function(db_dir){
-      self$pool                <- self$open(db_dir)
+    initialize = function(host){
+      self$pool                <- self$open(host)
       self$tables              <- DBI::dbListTables(self$pool)
-      self$connected_database  <- db_dir
+      self$connected_database  <- host
     },
     
     #' @description
     #' open a MonetDBLite connection
-    #' @param db_dir DB directory.
-    open = function(db_dir) {
+    #' @param host DB host
+    open = function(host = ":memory:") {
       tryCatch({
         pool::dbPool(
           drv   = MonetDBLite::MonetDBLite(),
-          db_dir= db_dir
+          host= host
         )},
         error = function(e) abort("Failed to establish a database connection.")
       )

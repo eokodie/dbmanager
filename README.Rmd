@@ -50,7 +50,7 @@ features <- tibble::tribble(
   "PostgreSQL",   yes,
   "SQL Server",   yes,
   "MonetDB",      yes,
-  "SQLite",       no,
+  "SQLite",       yes,
   "CouchDB",      no,
   "MongoDB",      no,
   "Spark",        no
@@ -70,7 +70,7 @@ remotes::install_github("eokodie/dbmanager", ref = "main")
 
 `dbmanager` is implemented with R6 classes to give a consistent interface to common databases and compute engines. We will illustrate this with some code snippets.
 
-Let's begin with these credentials.
+Let's begin with some credentials.
 ```{r, eval=FALSE}
 db_name  = Sys.getenv("db_name")
 host     = Sys.getenv("host") 
@@ -79,7 +79,7 @@ password = Sys.getenv("password")
 ```
 
 
-We can connect to a MySQL database with.
+We can connect to a __MySQL__ database with.
 ```{r, eval=FALSE}
 library(dbmanager)
 
@@ -129,7 +129,7 @@ DBI::dbListTables(pool)
 db$close()
 ```
 
-Similarly, we can connect to PostgreSQL with.
+Similarly, we can connect to __PostgreSQL__ with.
 ```{r, eval=FALSE}
 library(dbmanager)
 
