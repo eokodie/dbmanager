@@ -84,7 +84,7 @@ db <- MySQL$new(
 db$available_databases
 #> [1] "test_db"                   "information_schema"       
 #> [3] "mysql"                     "performance_schema"       
-#> [5] "previous_close_prices_tbl" "sys"                      
+#> [5] "previous_close_prices_db"  "sys"                      
 #> [7] "example_db"
 
 db$connected_database
