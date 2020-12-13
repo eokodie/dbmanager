@@ -16,6 +16,10 @@ DatabaseManager
 \item{user}{User name.}
 
 \item{password}{Password.}
+
+\item{name}{A character string specifying the unquoted DBMS table name.}
+
+\item{value}{a data.frame (or coercible to data.frame).}
 }
 \value{
 A DatabaseManager template.
@@ -26,6 +30,8 @@ open a database connection
 }
 \description{
 This is a superclass for managing database connections.
+
+Create a table
 }
 \section{Methods}{
 
