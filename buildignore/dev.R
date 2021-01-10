@@ -6,7 +6,7 @@ path <- system.file("extdata/config.yml", package = "pkg")
 conf <- config::get(file = path)
 
 # Connect to database
-mysql <- MySQL$new(
+mysql <- dbmanager::MySQL$new(
   db_name   = "test_db",
   host     = conf$db$host, 
   user     = conf$db$user, 

@@ -54,7 +54,7 @@ following databases and compute engines.
 remotes::install_github("eokodie/dbmanager", ref = "main")
 ```
 
-## Examples
+## Usage
 
 `dbmanager` is implemented with R6 classes to give a consistent
 interface to common databases and compute engines. We will illustrate
@@ -138,6 +138,32 @@ db$tables
 pool <- db$pool
 
 db$close()
+```
+
+## Using SQL
+
+It is possible to execute SQL queries directly against tables within
+remote databases using the `query` method. `dbmanager` implements a DBI
+interface for all connection objects, so you can use `query` to execute
+SQL and return the result as an R data frame:
+
+``` r
+db <- MySQL$new(
+  db_name  = db_name,
+  host     = host, 
+  user     = user, 
+  password = password
+)
+
+db$query("show databases")
+#>                    Database
+#> 1                example_db
+#> 2        information_schema
+#> 3                     mysql
+#> 4        performance_schema
+#> 5                  price_db
+#> 6                       sys
+#> 7                   test_db
 ```
 
 ## Issues & Contributions

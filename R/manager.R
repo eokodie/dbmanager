@@ -10,18 +10,19 @@
 #'   \item{\code{show_databases}}{show available databases}
 #'   \item{\code{create_new_db}}{create a new database}
 #'   \item{\code{create_table}}{create a table}
+#'   \item{\code{query}}{run SQL query}
 #' }
 #' @return A DatabaseManager template.
 DatabaseManager <- R6::R6Class(
-  classname = "DatabaseManager",
-  cloneable = FALSE,
+  classname  = "DatabaseManager",
+  cloneable  = FALSE,
   lock_class = TRUE,
   
   public = list(
-    pool = NULL,
-    connected_database = NULL,
+    pool                = NULL,
+    connected_database  = NULL,
     available_databases = NULL,
-    tables = NULL,
+    tables              = NULL,
     
     #' Create a new `DatabaseManager` object.
     #' @param db_name Database name.
@@ -57,6 +58,11 @@ DatabaseManager <- R6::R6Class(
       # DBI::dbGetQuery(pool, "set global local_infile=true;")
     },
     
+    #' @description Send query, retrieve results and then clear result set.
+    #' @param statement a character string containing SQL..
+    query = function(statement){
+      DBI::dbGetQuery(self$pool, statement)
+    },
     #' @description Create a table
     #' @param name A character string specifying the unquoted DBMS table name.
     #' @param value a data.frame (or coercible to data.frame).
