@@ -29,7 +29,7 @@ MySQL <- R6::R6Class(
     #' @return A new `Pool` object.
     open = function(db_name, host, user, password) {
       
-      pool <- tryCatch({
+      tryCatch({
         pool <- pool::dbPool(
           drv      = RMySQL::MySQL(),
           dbname   = db_name,
